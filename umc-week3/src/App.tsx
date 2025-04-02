@@ -8,6 +8,7 @@ import { Movies } from './pages/Movies.tsx';
 import { UpComing } from './pages/UpComing.tsx';
 import { TopRated } from './pages/TopRated.tsx';
 import { NowPlaying } from './pages/NowPlaying.tsx';
+import { Detail } from './pages/Detail.tsx';
 
 const router = createBrowserRouter([
     {
@@ -21,22 +22,30 @@ const router = createBrowserRouter([
             },
             {
 		            // /:을 활용해서, 동적으로 바뀌는 부분의 이름을 정의해줍시다.
-                path: 'movies/:movieId',
-                element: <Movies/>
+                path: 'movies',
+                children:[
+                  {
+                    index: true,
+                    element: <Movies />
+                  },{
+                    path: ':movieId/detail',
+                    element: <Detail />
+                  }
+                ]
             },
             {
 		            // /:을 활용해서, 동적으로 바뀌는 부분의 이름을 정의해줍시다.
-                path: 'upComing/:movieId',
+                path: 'upComing',
                 element: <UpComing/>
             },
             {
 		            // /:을 활용해서, 동적으로 바뀌는 부분의 이름을 정의해줍시다.
-                path: 'topRated/:movieId',
+                path: 'topRated',
                 element: <TopRated/>
             },
             {
 		            // /:을 활용해서, 동적으로 바뀌는 부분의 이름을 정의해줍시다.
-                path: 'nowPlaying/:movieId',
+                path: 'nowPlaying',
                 element: <NowPlaying/>
             }
         ]

@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Movie } from '../data/movie';
+import { useNavigate } from 'react-router-dom';
 
 export const Movies = () => {
+  const navigate = useNavigate();
   const [movies, setMovies] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -72,6 +74,7 @@ export const Movies = () => {
               <div
                 key={movie.id}
                 className="relative bg-white rounded-xl shadow-md overflow-hidden group"
+                onClick={()=>navigate(`${movie.id}/detail`)}
               >
                 {movie.poster_path ? (
                   <img
