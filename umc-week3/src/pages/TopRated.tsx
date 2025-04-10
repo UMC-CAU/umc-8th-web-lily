@@ -20,7 +20,7 @@ export const TopRated = () => {
           {
             headers: {
               Authorization:
-                'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOTFhNzM4ZDFlZTZlNjc3N2E1OTQ1YTI3OTc5ZDg5MSIsIm5iZiI6MTY4OTkyMjA3NS4yMjEsInN1YiI6IjY0YmEyYTFiMzAwOWFhMDBmZmJmOGJhZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wVUaA4lW5vsMB_GONHFKqJfMfUWzROmbsT-F9qi0Mbw',
+                `Bearer ${import.meta.env.VITE_TMDB_KEY}`,
               Accept: 'application/json',
             },
           }

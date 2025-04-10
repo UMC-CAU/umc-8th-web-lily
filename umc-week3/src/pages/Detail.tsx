@@ -37,13 +37,13 @@ export const Detail = () => {
         const [detailRes, creditRes] = await Promise.all([
           axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, {
             headers: {
-              Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOTFhNzM4ZDFlZTZlNjc3N2E1OTQ1YTI3OTc5ZDg5MSIsIm5iZiI6MTY4OTkyMjA3NS4yMjEsInN1YiI6IjY0YmEyYTFiMzAwOWFhMDBmZmJmOGJhZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wVUaA4lW5vsMB_GONHFKqJfMfUWzROmbsT-F9qi0Mbw',
+              Authorization: `Bearer ${import.meta.env.VITE_TMDB_KEY}`,
               Accept: 'application/json',
             },
           }),
           axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`, {
             headers: {
-              Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOTFhNzM4ZDFlZTZlNjc3N2E1OTQ1YTI3OTc5ZDg5MSIsIm5iZiI6MTY4OTkyMjA3NS4yMjEsInN1YiI6IjY0YmEyYTFiMzAwOWFhMDBmZmJmOGJhZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wVUaA4lW5vsMB_GONHFKqJfMfUWzROmbsT-F9qi0Mbw',
+              Authorization: `Bearer ${import.meta.env.VITE_TMDB_KEY}`,
               Accept: 'application/json',
             },
           }),
